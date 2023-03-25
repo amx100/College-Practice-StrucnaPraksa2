@@ -1,6 +1,8 @@
-﻿using Domain.Contracts;
-using Infrastructure.Persistence;
+﻿using Application.Contracts;
+using Application.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Application.Repositories
@@ -35,5 +37,7 @@ namespace Application.Repositories
         {
             _context.Set<T>().Remove(entity);
         }
+
+       
     }
 }

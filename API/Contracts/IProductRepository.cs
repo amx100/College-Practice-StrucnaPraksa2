@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿using Application.Entities;
 
-namespace Domain.Contracts
+namespace Application.Contracts
 {
     public interface IProductRepository : IBaseRepository<Product>
     {}
