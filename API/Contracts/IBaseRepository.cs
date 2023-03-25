@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Domain.Contracts
+namespace Application.Contracts
 {
     public interface IBaseRepository<T>
     {

@@ -1,6 +1,6 @@
-﻿using Domain.Contracts;
-using Domain.Entities;
-using Infrastructure.Persistence;
+﻿using Application.Contracts;
+using Application.Data;
+using Application.Entities;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
