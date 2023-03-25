@@ -1,6 +1,7 @@
-﻿using Domain.Enums;
+﻿using Application.Enums;
+using System.Collections.Generic;
 
-namespace Domain.Entities
+namespace Application.Entities
 {
     public class Order
     {
