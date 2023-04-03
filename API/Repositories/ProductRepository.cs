@@ -1,9 +1,12 @@
 ﻿using Application.Contracts;
 using Application.Data;
 using Application.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Application.Repositories
 {
@@ -11,29 +14,30 @@ namespace Application.Repositories
     {
         public ProductRepository(ApplicationDbContext context) : base(context) { }
 
-        public void Create(Product entity)
+        public void CreateProduct(Product product)
         {
-            throw new NotImplementedException();
+            Create(product);
+
         }
 
-        public void Delete(Product entity)
+        public void DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            Delete(product);
         }
 
-        public IQueryable<Product> FindAll()
+        public async Task<IEnumerable<Product>> GetAllProducts()
         {
-            throw new NotImplementedException();
+            return await SelectAll().ToListAsync();
         }
 
-        public IQueryable<Product> FindByCondition(Expression<Func<Product, bool>> expression)
+        public async Task<Product> GetProductById(int id)
         {
-            throw new NotImplementedException();
+            return await SelectByCondition(product => product.ProductID == id).FirstOrDefaultAsync();
         }
 
-        public void Update(Product entity)
+        public void UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
+            Update(product);
         }
     }
 }

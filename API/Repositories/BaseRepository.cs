@@ -16,11 +16,11 @@ namespace Application.Repositories
             _context = context;
         }
 
-        public IQueryable<T> FindAll()
+        public IQueryable<T> SelectAll()
         {
             return _context.Set<T>().AsNoTracking();
         }
-        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        public IQueryable<T> SelectByCondition(Expression<Func<T, bool>> expression)
         {
             return _context.Set<T>().Where(expression).AsNoTracking();
         }
