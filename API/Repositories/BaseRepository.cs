@@ -38,6 +38,6 @@ namespace Application.Repositories
             _context.Set<T>().Remove(entity);
         }
 
-       
-    }
+	
+	}
 }
