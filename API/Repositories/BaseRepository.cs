@@ -1,4 +1,4 @@
-﻿using Application.Contracts;
+﻿using Application.Contracts.Repository;
 using Application.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,28 +16,14 @@ namespace Application.Repositories
             _context = context;
         }
 
-        public IQueryable<T> SelectAll()
-        {
-            return _context.Set<T>().AsNoTracking();
-        }
-        public IQueryable<T> SelectByCondition(Expression<Func<T, bool>> expression)
-        {
-            return _context.Set<T>().Where(expression).AsNoTracking();
-        }
-        public void Create(T entity)
-        {
-            _context.Set<T>().Add(entity);
-        }
+        public void Create(T entity) => _context.Set<T>().Add(entity);
 
-        public void Update(T entity)
-        {
-            _context.Set<T>().Update(entity);
-        }
-        public void Delete(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-        }
+        public void Update(T entity) => _context.Set<T>().Update(entity);
 
-	
-	}
+        public void Delete(T entity) => _context.Set<T>().Remove(entity);
+
+        public IQueryable<T> SelectAll() => _context.Set<T>().AsNoTracking();
+
+        public IQueryable<T> SelectByCondition(Expression<Func<T, bool>> expression) => _context.Set<T>().Where(expression).AsNoTracking();
+    }
 }

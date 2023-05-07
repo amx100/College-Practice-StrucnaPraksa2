@@ -1,4 +1,4 @@
-﻿using Application.Entities;
+﻿using Application.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Data
