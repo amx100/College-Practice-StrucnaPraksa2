@@ -13,5 +13,6 @@ namespace Application.Contracts
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
         void Update(Data.Entities.Product product);
+        void CreateProduct(Data.Entities.Product product);
     }
 }
